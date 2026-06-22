@@ -97,7 +97,7 @@ http://192.168.11.1/protocol.csp?fname=net&opt=smacfilter_conf&function=set&act=
 
 ### Screenshot after believed overflow/canary trip: 
 
-![canary_trip](server_error.png)
+![canary_trip](/resources/server_error.png)
 
 ### General insecure practices 1: 
 
@@ -112,16 +112,16 @@ Using the function `sprintf()` with user input is inherently unsafe. It is recom
 
 Here are some screenshots of the ghidra db and of the terminal after the poc is thrown. You can leverage this bug to change the password of `root` as the `commuos` binary runs as root. I will simply be creating 3 files in `/` named 1, 2, 3 using the above proof of concept (POC) request. I will not be doing more due to opensource and public information being released here and the easability of the command injection into the repeater. 
 
-![Files_created](repeater_files_created.png)
+![Files_created](/resources/repeater_files_created.png)
 
 ### flow of ghidra in screenshots
 
-![ghidra_1](ghidra_sc_1.png)
-![ghidra_1](ghidra_sc_2.png) 
-![ghidra_1](ghidra_sc_3.png)
-![ghidra_1](ghidra_sc_4.png)
-![ghidra_1](ghidra_sc_5.png) 
-![ghidra_1](ghidra_sc_6.png) 
-![ghidra_1](ghidra_sc_7.png)
-![Ghidra_8](ghidra_sc_8.png)
+![ghidra_1](/resources/ghidra_sc_1.png)
+![ghidra_1](/resources/ghidra_sc_2.png) 
+![ghidra_1](/resources/ghidra_sc_3.png)
+![ghidra_1](/resources/ghidra_sc_4.png)
+![ghidra_1](/resources/ghidra_sc_5.png) 
+![ghidra_1](/resources/ghidra_sc_6.png) 
+![ghidra_1](/resources/ghidra_sc_7.png)
+![Ghidra_8](/resources/ghidra_sc_8.png)
 
