@@ -99,6 +99,20 @@ http://192.168.11.1/protocol.csp?fname=net&opt=smacfilter_conf&function=set&act=
 
 ![canary_trip](/resources/server_error.png)
 
+## dportfilter_conf
+
+The router also allows for destination port filtering. I found several more bugs on that. 
+
+### BUG 1 DPORT: 
+
+```
+name = (char *)get_value(params,"name"), name != (char *)0x0
+.
+.
+.
+sprintf(acStack_618,"uci set firewall.dportfilter%d.name=%s",uVar5,name);
+```
+
 ### General insecure practices 1: 
 
 The file system on the Wifi repeater is R/W which allows users to move system binaries around. I have been able to relocate the `reboot` binary which allows any downstream calls to reboot the system inoperable. Targeting the binary `commuos` which is the webui backend (written in c/++) typically forces the attacker to reboot the system. By exploiting these command injection vulnerabilities with an appended `mv reboot /` the system will no longer reboot and the commands will be run. And an end user will never know. 
